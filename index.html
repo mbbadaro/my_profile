@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marianna Barros Badaro | Cornell MBA Candidate</title>
+<meta name="description" content="Marianna Barros Badaro, Cornell SC Johnson MBA candidate with experience in revenue strategy and operations at Blip, MBRF Global Foods and iFood.">
+<style>
+  :root {
+    --linen: #fbf7f2;
+    --stone: #d6ccc2;
+    --cream: #f5ebe0;
+    --sand: #e3d5ca;
+    --taupe: #d5bdaf;
+    --ink: #3b322c;
+    --muted: #6b5d53;
+    --accent: #8a6a58;
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--linen);
+  }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 1.25rem; }
+
+  /* Sticky nav */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(245, 235, 224, 0.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--stone);
+  }
+  nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 3.5rem;
+  }
+  .brand {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--ink);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  nav ul {
+    display: flex;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  nav ul::-webkit-scrollbar { display: none; }
+  nav ul a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.92rem;
+    white-space: nowrap;
+    padding: 0.5rem 0;
+    display: inline-block;
+  }
+  nav ul a:hover { color: var(--ink); }
+
+  /* Hero */
+  .hero { background: var(--cream); padding: 4rem 0 3.5rem; }
+  .hero .wrap {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.78rem;
+    color: var(--accent);
+    margin: 0 0 0.75rem;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: normal;
+    font-size: clamp(2.2rem, 6vw, 3.4rem);
+    line-height: 1.1;
+    margin: 0 0 1rem;
+  }
+  .title { font-size: 1.15rem; color: var(--muted); margin: 0 0 1.75rem; max-width: 34rem; }
+  .btns { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .btn {
+    display: inline-block;
+    padding: 0.7rem 1.3rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+  }
+  .btn.primary { background: var(--ink); color: var(--cream); }
+  .btn:hover { opacity: 0.85; }
+  .photo {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 30%;
+    border: 6px solid var(--taupe);
+    background: var(--sand);
+    display: block;
+  }
+  .photo-frame {
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid var(--taupe);
+  }
+  .photo-frame .photo {
+    border: 0;
+    border-radius: 0;
+    transform: scale(1.7);
+    transform-origin: 50% 42%;
+  }
+  .photo-placeholder {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    border: 6px solid var(--taupe);
+    background: var(--sand);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 4rem;
+    color: var(--muted);
+  }
+
+  /* Sections */
+  section { padding: 3.5rem 0; }
+  section:nth-of-type(even) { background: var(--cream); }
+  h2 {
+    font-family: var(--serif);
+    font-weight: normal;
+    font-size: 1.9rem;
+    margin: 0 0 1.75rem;
+  }
+  h2::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 3px;
+    background: var(--taupe);
+    margin-top: 0.6rem;
+  }
+  .about p { font-size: 1.1rem; max-width: 44rem; margin: 0 0 1rem; }
+
+  .card {
+    background: #fff;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid var(--stone);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .card-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.25rem 1rem;
+  }
+  .card h3 { margin: 0; font-size: 1.15rem; }
+  .dates {
+    font-size: 0.85rem;
+    color: var(--muted);
+    background: var(--sand);
+    padding: 0.15rem 0.7rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .role { margin: 0.2rem 0 0; color: var(--accent); font-weight: 600; }
+  .context { margin: 0.2rem 0 0; font-size: 0.9rem; color: var(--muted); }
+  .card ul { margin: 0.9rem 0 0; padding-left: 1.2rem; }
+  .card li { margin-bottom: 0.4rem; }
+  .card li::marker { color: var(--taupe); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0; padding: 0; list-style: none; }
+  .tags li {
+    background: var(--sand);
+    border: 1px solid var(--taupe);
+    border-radius: 999px;
+    padding: 0.45rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+  .contact-list li { display: flex; flex-direction: column; }
+  .contact-list span { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+  .contact-list a { font-size: 1.1rem; word-break: break-word; }
+
+  footer { padding: 2rem 0; text-align: center; font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--stone); }
+
+  @media (max-width: 720px) {
+    nav .wrap { flex-direction: column; align-items: flex-start; gap: 0; padding-top: 0.5rem; }
+    nav ul { width: 100%; gap: 1.1rem; }
+    html { scroll-padding-top: 6rem; }
+    .hero { padding: 2.5rem 0; }
+    .hero .wrap { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
+    .hero .photo-wrap { order: -1; justify-self: center; }
+    .photo, .photo-placeholder { width: 170px; height: 170px; }
+    .title { margin-left: auto; margin-right: auto; }
+    .btns { justify-content: center; }
+    section { padding: 2.75rem 0; }
+    .card { padding: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">Marianna Barros Badaro</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Cornell SC Johnson MBA Candidate · Forté Fellow</p>
+      <h1>Marianna Barros Badaro</h1>
+      <p class="title">Business strategy and operations. Former Team Lead, Revenue Strategy &amp; Operations at Blip.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:mbb276@cornell.edu">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/marianna-badaro" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="photo-wrap">
+      <div class="photo-frame">
+        <img class="photo" src="profile.jpg" alt="Portrait of Marianna Barros Badaro" width="240" height="240"
+             onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';">
+      </div>
+      <div class="photo-placeholder" aria-hidden="true">MB</div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="about" id="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <p>I'm an MBA candidate at Cornell SC Johnson and a Forté Fellow, with a background in industrial engineering and revenue strategy at high-growth companies in Brazil, including Blip, MBRF Global Foods and iFood.</p>
+      <p>Most recently I led a 7-person global RevOps team at Blip, Brazil's largest AI company, where I worked across Product, Customer Success and leadership to cut churn and sharpen go-to-market strategy. I've lived in 6 cities across 4 countries.</p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+
+      <article class="card">
+        <div class="card-head">
+          <h3>Blip</h3>
+          <span class="dates">2024 – 2026</span>
+        </div>
+        <p class="role">Team Lead, Revenue Strategy &amp; Operations</p>
+        <p class="context">São Paulo, Brazil · Brazil's largest AI company, backed by Microsoft, SoftBank and Warburg Pincus</p>
+        <ul>
+          <li>Led 7-person global RevOps team, improving forecast accuracy by 12% through end-to-end revenue planning and analyses, giving leadership more reliable numbers for decisions and clearer visibility into commercial performance.</li>
+          <li>Reduced churn 42% by spearheading cross-functional analysis with Product and Customer Success to identify churn drivers and unmet customer needs, shaping roadmap priorities across 5 product launches and feature releases.</li>
+          <li>Increased conversion from 12% to 35% among higher-value accounts in one year by redesigning GTM strategy and customer segmentation using funnel performance, retention and ARR potential to refine target segments.</li>
+          <li>Saved $1M annually by consolidating customer-success tools in the Gainsight relaunch across Brazil, US, India and Spain, increasing adoption by 266% in 4 months through redesigned portfolio workflows and standardized processes.</li>
+          <li>Aligned senior stakeholders, regional teams and end users after taking over an in-flight rollout, using targeted expert interviews to redirect global rollout priorities and address 80%+ of critical adoption gaps across 4 countries.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h3>MBRF Global Foods</h3>
+          <span class="dates">2022 – 2024</span>
+        </div>
+        <p class="role">Senior Analyst, Sales Strategy &amp; Planning</p>
+        <p class="context">São Paulo, Brazil · Global protein leader and one of the largest food companies (~$15B EV)</p>
+        <ul>
+          <li>Drove 32% annual Frozen Foods revenue growth by using an analytical model to replace a standard product mix with larger bundles matched to each customer and optimizing retail planograms to expand in-store distribution.</li>
+          <li>Reduced waiting-related logistics costs by 35% by aligning Commercial and Logistics on 1 scheduling and shipment-tracking process, with real-time ETA visibility and proactive rerouting to keep deliveries within scheduled windows.</li>
+          <li>Selected as Chief of Staff to the Sales VP (C-suite); led the weekly Commercial Performance Forum with 10 senior leaders and built analyses that identified risks, shaped recommendations and cascaded plans across sales operations.</li>
+          <li>Restructured commercial processes, raising adherence by 15% for more accurate data and better customer offers.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h3>iFood</h3>
+          <span class="dates">2021 – 2022</span>
+        </div>
+        <p class="role">Analyst, Sales Strategy &amp; Planning</p>
+        <p class="context">São Paulo, Brazil · Latin America's leading technology ecosystem (~220M monthly orders)</p>
+        <ul>
+          <li>Scaled iFood Card revenue by 300% YoY by shaping the internal venture thesis for the first flexible corporate meal benefits solution and building its operational core and scalable strategic B2B distribution channels from scratch.</li>
+          <li>Owned iFood Card's GTM and in-app sales migration, raising gross margin by 25% by eliminating reseller fees.</li>
+          <li>Boosted productivity by 34% and enabled data-driven cross-sell by integrating CRM and redesigning sales workflow.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <h2>Education</h2>
+
+      <article class="card">
+        <div class="card-head">
+          <h3>Cornell SC Johnson College of Business</h3>
+          <span class="dates">2028</span>
+        </div>
+        <p class="role">Master of Business Administration</p>
+        <p class="context">Ithaca, NY · Forté Fellow (merit-based scholarship) · High Tech Club, Latin America Business Association, Johnson Tennis Club</p>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h3>Insper</h3>
+          <span class="dates">2024</span>
+        </div>
+        <p class="role">Master of Business Project Management</p>
+        <p class="context">São Paulo, Brazil · Top 10% of class · Insper Data (Data Science &amp; Analytics student organization)</p>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h3>Pontifícia Universidade Católica de Minas Gerais</h3>
+          <span class="dates">2021</span>
+        </div>
+        <p class="role">Bachelor of Industrial Engineering</p>
+        <p class="context">Belo Horizonte, Brazil · Top 5% of class · Technology and Innovation Study Group, helping 30+ women entrepreneurs build business models</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <ul class="tags">
+        <li>SQL</li>
+        <li>Databricks</li>
+        <li>Tableau</li>
+        <li>Power BI</li>
+        <li>Salesforce</li>
+        <li>HubSpot</li>
+        <li>Gainsight</li>
+        <li>Excel</li>
+        <li>PowerPoint</li>
+        <li>Revenue Operations</li>
+        <li>Go-to-Market Strategy</li>
+        <li>Customer Segmentation</li>
+        <li>Forecasting &amp; Planning</li>
+        <li>Cross-functional Leadership</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="mailto:mbb276@cornell.edu">mbb276@cornell.edu</a></li>
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/marianna-badaro" target="_blank" rel="noopener">linkedin.com/in/marianna-badaro</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Marianna Barros Badaro</div>
+</footer>
+
+</body>
+</html>
