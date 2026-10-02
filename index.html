@@ -203,6 +203,15 @@
     font-size: 0.95rem;
   }
 
+  .interests {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .interests .card { margin: 0; }
+  .interests h3 { margin: 0 0 0.4rem; font-size: 1.05rem; color: var(--accent); }
+  .interests p { margin: 0; }
+
   .contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
   .contact-list li { display: flex; flex-direction: column; }
   .contact-list span { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
@@ -212,8 +221,9 @@
 
   @media (max-width: 720px) {
     nav .wrap { flex-direction: column; align-items: flex-start; gap: 0; padding-top: 0.5rem; }
-    nav ul { width: 100%; gap: 1.1rem; }
-    html { scroll-padding-top: 6rem; }
+    nav ul { width: 100%; flex-wrap: wrap; gap: 0 1.1rem; overflow: visible; }
+    nav ul a { padding: 0.3rem 0; }
+    html { scroll-padding-top: 7.5rem; }
     .hero { padding: 2.5rem 0; }
     .hero .wrap { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
     .hero .photo-wrap { order: -1; justify-self: center; }
@@ -235,6 +245,7 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#outside">Outside of Work</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -373,6 +384,30 @@
         <li>Forecasting &amp; Planning</li>
         <li>Cross-functional Leadership</li>
       </ul>
+    </div>
+  </section>
+
+  <section id="outside">
+    <div class="wrap">
+      <h2>Outside of Work</h2>
+      <div class="interests">
+        <article class="card">
+          <h3>Cooking</h3>
+          <p>Culinary enthusiast, known among friends for my "Romeo and Juliet" cheesecake.</p>
+        </article>
+        <article class="card">
+          <h3>Sports</h3>
+          <p>Former volleyball captain and varsity swimmer.</p>
+        </article>
+        <article class="card">
+          <h3>Coffee &amp; travel</h3>
+          <p>Coffee aficionado who has lived in 6 cities across 4 countries and is still discovering new favorite flavors.</p>
+        </article>
+        <article class="card">
+          <h3>Community</h3>
+          <p>Volunteer for 7 years, supporting the distribution of 1+ ton of food to local communities.</p>
+        </article>
+      </div>
     </div>
   </section>
 
