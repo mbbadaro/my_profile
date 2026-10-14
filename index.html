@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marianna Barros Badaro | Cornell MBA Candidate</title>
+<title>Marianna Barros Badaro | MBA Candidate, Cornell Johnson</title>
 <meta name="description" content="Marianna Barros Badaro, Cornell SC Johnson MBA candidate with experience in revenue strategy and operations at Blip, MBRF Global Foods and iFood.">
 <style>
   :root {
@@ -30,15 +30,15 @@
   }
   a { color: var(--accent); }
   a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-  .wrap { max-width: 960px; margin: 0 auto; padding: 0 1.25rem; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.25rem; }
 
-  /* Sticky nav */
+  /* Nav */
   nav {
     position: sticky;
     top: 0;
     z-index: 10;
-    background: rgba(245, 235, 224, 0.95);
-    backdrop-filter: blur(6px);
+    background: rgba(251, 247, 242, 0.92);
+    backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--stone);
   }
   nav .wrap {
@@ -46,192 +46,299 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    min-height: 3.5rem;
+    min-height: 3.75rem;
   }
   .brand {
-    font-family: var(--serif);
-    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
     color: var(--ink);
     text-decoration: none;
+    font-weight: 600;
     white-space: nowrap;
   }
-  nav ul {
+  .brand-badge {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 8px;
+    background: var(--ink);
+    color: var(--cream);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .nav-links {
     display: flex;
-    gap: 1.25rem;
+    align-items: center;
+    gap: 0.25rem;
     margin: 0;
     padding: 0;
     list-style: none;
-    overflow-x: auto;
-    scrollbar-width: none;
   }
-  nav ul::-webkit-scrollbar { display: none; }
-  nav ul a {
+  .nav-links a {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
     color: var(--muted);
     text-decoration: none;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     white-space: nowrap;
-    padding: 0.5rem 0;
-    display: inline-block;
   }
-  nav ul a:hover { color: var(--ink); }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { background: var(--sand); color: var(--ink); }
+  .nav-links a.nav-cta {
+    margin-left: 0.5rem;
+    background: var(--ink);
+    color: var(--cream);
+    font-weight: 600;
+    padding: 0.45rem 1.1rem;
+  }
 
-  /* Hero */
-  .hero { background: var(--cream); padding: 4rem 0 3.5rem; }
-  .hero .wrap {
+  /* Hero card */
+  .hero { padding: 2rem 0 1rem; }
+  .hero-card {
     display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 2.5rem;
+    grid-template-columns: 1.35fr 1fr;
+    border-radius: 24px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--sand) 100%);
+    border: 1px solid var(--stone);
+    min-height: 420px;
+  }
+  .hero-text {
+    padding: 3.25rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .eyebrow {
     text-transform: uppercase;
     letter-spacing: 0.14em;
-    font-size: 0.78rem;
+    font-size: 0.75rem;
+    font-weight: 600;
     color: var(--accent);
-    margin: 0 0 0.75rem;
+    margin: 0 0 0.9rem;
   }
   h1 {
     font-family: var(--serif);
     font-weight: normal;
-    font-size: clamp(2.2rem, 6vw, 3.4rem);
-    line-height: 1.1;
+    font-size: clamp(2.3rem, 5.5vw, 3.6rem);
+    line-height: 1.08;
     margin: 0 0 1rem;
   }
-  .title { font-size: 1.15rem; color: var(--muted); margin: 0 0 1.75rem; max-width: 34rem; }
+  .tagline { font-size: 1.15rem; color: var(--muted); margin: 0 0 1.4rem; max-width: 32rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1.75rem; padding: 0; list-style: none; }
+  .chips li {
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(251, 247, 242, 0.7);
+    border: 1px solid var(--taupe);
+  }
   .btns { display: flex; flex-wrap: wrap; gap: 0.75rem; }
   .btn {
     display: inline-block;
-    padding: 0.7rem 1.3rem;
+    padding: 0.75rem 1.4rem;
     border-radius: 999px;
     text-decoration: none;
     font-size: 0.95rem;
+    font-weight: 600;
     border: 1px solid var(--ink);
     color: var(--ink);
   }
   .btn.primary { background: var(--ink); color: var(--cream); }
   .btn:hover { opacity: 0.85; }
-  .photo {
-    width: 240px;
-    height: 240px;
-    border-radius: 50%;
+  .hero-photo { position: relative; background: var(--sand); }
+  .hero-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    object-position: 50% 30%;
-    border: 6px solid var(--taupe);
-    background: var(--sand);
+    object-position: 50% 35%;
     display: block;
   }
-  .photo-frame {
-    border-radius: 50%;
-    overflow: hidden;
-    border: 6px solid var(--taupe);
-  }
-  .photo-frame .photo {
-    border: 0;
-    border-radius: 0;
-    transform: scale(1.7);
-    transform-origin: 50% 42%;
-  }
   .photo-placeholder {
-    width: 240px;
-    height: 240px;
-    border-radius: 50%;
-    border: 6px solid var(--taupe);
-    background: var(--sand);
+    position: absolute;
+    inset: 0;
     display: none;
     align-items: center;
     justify-content: center;
     font-family: var(--serif);
-    font-size: 4rem;
+    font-size: 5rem;
+    color: var(--muted);
+  }
+
+  /* Company strip */
+  .strip { padding: 2rem 0 1rem; text-align: center; }
+  .strip p.eyebrow { color: var(--muted); }
+  .strip ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 3rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: var(--serif);
+    font-size: 1.5rem;
     color: var(--muted);
   }
 
   /* Sections */
-  section { padding: 3.5rem 0; }
-  section:nth-of-type(even) { background: var(--cream); }
+  section { padding: 4rem 0; }
+  .section-label {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
   h2 {
     font-family: var(--serif);
     font-weight: normal;
-    font-size: 1.9rem;
-    margin: 0 0 1.75rem;
+    font-size: clamp(1.9rem, 4vw, 2.5rem);
+    line-height: 1.15;
+    margin: 0 0 2rem;
   }
-  h2::after {
-    content: "";
-    display: block;
-    width: 3rem;
-    height: 3px;
-    background: var(--taupe);
-    margin-top: 0.6rem;
-  }
-  .about p { font-size: 1.1rem; max-width: 44rem; margin: 0 0 1rem; }
 
+  /* About */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  .about-grid h2 { margin: 0; }
+  .about-grid p { font-size: 1.08rem; margin: 0 0 1rem; }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .stat {
+    background: var(--cream);
+    border: 1px solid var(--stone);
+    border-radius: 16px;
+    padding: 1.25rem;
+  }
+  .stat strong {
+    display: block;
+    font-family: var(--serif);
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 1.1;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+  .stat span { font-size: 0.9rem; color: var(--muted); }
+
+  /* Cards */
   .card {
     background: #fff;
-    background: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.6);
     border: 1px solid var(--stone);
-    border-radius: 14px;
-    padding: 1.5rem;
+    border-radius: 18px;
+    padding: 1.75rem;
     margin-bottom: 1.25rem;
   }
   .card-head {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: baseline;
-    gap: 0.25rem 1rem;
+    align-items: flex-start;
+    gap: 0.5rem 1rem;
   }
-  .card h3 { margin: 0; font-size: 1.15rem; }
+  .company {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: normal;
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+  .role { margin: 0.6rem 0 0; font-size: 1.15rem; font-weight: 600; }
+  .where { margin: 0.1rem 0 0; font-size: 0.9rem; font-weight: 600; color: var(--accent); }
+  .context { margin: 0.3rem 0 0; font-size: 0.9rem; color: var(--muted); }
   .dates {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
+    font-weight: 600;
     color: var(--muted);
     background: var(--sand);
-    padding: 0.15rem 0.7rem;
+    padding: 0.25rem 0.8rem;
     border-radius: 999px;
     white-space: nowrap;
   }
-  .role { margin: 0.2rem 0 0; color: var(--accent); font-weight: 600; }
-  .context { margin: 0.2rem 0 0; font-size: 0.9rem; color: var(--muted); }
-  .card ul { margin: 0.9rem 0 0; padding-left: 1.2rem; }
-  .card li { margin-bottom: 0.4rem; }
+  .card ul { margin: 1rem 0 0; padding-left: 1.2rem; }
+  .card li { margin-bottom: 0.5rem; }
   .card li::marker { color: var(--taupe); }
 
-  .tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0; padding: 0; list-style: none; }
+  /* Education */
+  .edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .edu-grid .card { margin: 0; }
+  .edu-grid .company { font-size: 1.3rem; }
+
+  /* Skills */
+  .skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .skill-grid .card { margin: 0; }
+  .group-title { margin: 0 0 1rem; font-size: 1rem; font-weight: 600; color: var(--accent); }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
   .tags li {
-    background: var(--sand);
+    background: var(--cream);
     border: 1px solid var(--taupe);
     border-radius: 999px;
-    padding: 0.45rem 1rem;
-    font-size: 0.95rem;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.9rem;
   }
 
-  .interests {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+  /* Outside of work */
+  .outside-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .outside-grid > .card { margin: 0; }
+  .item + .item { margin-top: 1.1rem; padding-top: 1.1rem; border-top: 1px solid var(--stone); }
+  .item h4 { margin: 0 0 0.25rem; font-size: 1rem; }
+  .item p { margin: 0; color: var(--muted); }
+
+  /* Contact */
+  .contact-card {
+    text-align: center;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--sand) 100%);
+    border: 1px solid var(--stone);
+    border-radius: 24px;
+    padding: 3.5rem 1.5rem;
   }
-  .interests .card { margin: 0; }
-  .interests h3 { margin: 0 0 0.4rem; font-size: 1.05rem; color: var(--accent); }
-  .interests p { margin: 0; }
+  .contact-card h2 { margin-bottom: 0.75rem; }
+  .contact-card p.lead { color: var(--muted); font-size: 1.1rem; margin: 0 auto 1.75rem; max-width: 32rem; }
+  .contact-card .btns { justify-content: center; }
+  .contact-card .email { display: block; margin-top: 1.25rem; font-size: 0.95rem; word-break: break-word; }
 
-  .contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
-  .contact-list li { display: flex; flex-direction: column; }
-  .contact-list span { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
-  .contact-list a { font-size: 1.1rem; word-break: break-word; }
+  footer { padding: 2rem 0; text-align: center; font-size: 0.85rem; color: var(--muted); }
 
-  footer { padding: 2rem 0; text-align: center; font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--stone); }
+  @media (max-width: 900px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .edu-grid, .skill-grid { grid-template-columns: 1fr; }
+  }
 
-  @media (max-width: 720px) {
-    nav .wrap { flex-direction: column; align-items: flex-start; gap: 0; padding-top: 0.5rem; }
-    nav ul { width: 100%; flex-wrap: wrap; gap: 0 1.1rem; overflow: visible; }
-    nav ul a { padding: 0.3rem 0; }
+  @media (max-width: 760px) {
+    nav .wrap { flex-direction: column; align-items: flex-start; gap: 0.25rem; padding-top: 0.6rem; padding-bottom: 0.4rem; }
+    .nav-links { flex-wrap: wrap; gap: 0.1rem; margin-left: -0.6rem; }
+    .nav-links a { padding: 0.3rem 0.6rem; font-size: 0.88rem; }
+    .nav-links a.nav-cta { display: none; }
     html { scroll-padding-top: 7.5rem; }
-    .hero { padding: 2.5rem 0; }
-    .hero .wrap { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
-    .hero .photo-wrap { order: -1; justify-self: center; }
-    .photo, .photo-placeholder { width: 170px; height: 170px; }
-    .title { margin-left: auto; margin-right: auto; }
-    .btns { justify-content: center; }
-    section { padding: 2.75rem 0; }
-    .card { padding: 1.25rem; }
+    .hero { padding-top: 1rem; }
+    .hero-card { grid-template-columns: 1fr; min-height: 0; }
+    .hero-photo { order: -1; aspect-ratio: 4 / 3.4; }
+    .hero-photo img { object-position: 50% 30%; }
+    .hero-text { padding: 2rem 1.5rem 2.25rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+    .outside-grid { grid-template-columns: 1fr; }
+    .strip ul { font-size: 1.2rem; gap: 0.5rem 1.75rem; }
+    section { padding: 3rem 0; }
+    .card { padding: 1.35rem; }
+    .stat strong { font-size: 1.7rem; }
   }
 </style>
 </head>
@@ -239,59 +346,91 @@
 
 <nav aria-label="Main">
   <div class="wrap">
-    <a class="brand" href="#top">Marianna Barros Badaro</a>
-    <ul>
+    <a class="brand" href="#top"><span class="brand-badge">MB</span>Marianna Barros Badaro</a>
+    <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#outside">Outside of Work</a></li>
+      <li><a href="#outside">Outside of work</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a class="nav-cta" href="mailto:mbb276@cornell.edu">Email me</a></li>
     </ul>
   </div>
 </nav>
 
 <header class="hero" id="top">
   <div class="wrap">
-    <div>
-      <p class="eyebrow">Cornell SC Johnson MBA Candidate · Forté Fellow</p>
-      <h1>Marianna Barros Badaro</h1>
-      <p class="title">Business strategy and operations. Former Team Lead, Revenue Strategy &amp; Operations at Blip.</p>
-      <div class="btns">
-        <a class="btn primary" href="mailto:mbb276@cornell.edu">Email me</a>
-        <a class="btn" href="https://www.linkedin.com/in/marianna-badaro" target="_blank" rel="noopener">LinkedIn</a>
+    <div class="hero-card">
+      <div class="hero-text">
+        <p class="eyebrow">MBA Candidate · Cornell Johnson · Class of '28</p>
+        <h1>Marianna Barros Badaro</h1>
+        <p class="tagline">Revenue strategy and operations, most recently leading a global RevOps team at Brazil's largest AI company.</p>
+        <ul class="chips">
+          <li>Forté Fellow</li>
+          <li>Industrial Engineer</li>
+          <li>STEM OPT eligible</li>
+        </ul>
+        <div class="btns">
+          <a class="btn primary" href="#contact">Get in touch</a>
+          <a class="btn" href="https://www.linkedin.com/in/marianna-badaro" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </div>
-    </div>
-    <div class="photo-wrap">
-      <div class="photo-frame">
-        <img class="photo" src="profile.jpg" alt="Portrait of Marianna Barros Badaro" width="240" height="240"
-             onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';">
+      <div class="hero-photo">
+        <img src="profile.jpg" alt="Portrait of Marianna Barros Badaro"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="photo-placeholder" aria-hidden="true">MB</div>
       </div>
-      <div class="photo-placeholder" aria-hidden="true">MB</div>
     </div>
   </div>
 </header>
 
+<div class="strip">
+  <div class="wrap">
+    <p class="eyebrow">Experience at</p>
+    <ul>
+      <li>Blip</li>
+      <li>MBRF Global Foods</li>
+      <li>iFood</li>
+    </ul>
+  </div>
+</div>
+
 <main>
-  <section class="about" id="about">
+  <section id="about">
     <div class="wrap">
-      <h2>About</h2>
-      <p>I'm an MBA candidate at Cornell SC Johnson and a Forté Fellow, with a background in industrial engineering and revenue strategy at high-growth companies in Brazil, including Blip, MBRF Global Foods and iFood.</p>
-      <p>Most recently I led a 7-person global RevOps team at Blip, Brazil's largest AI company, where I worked across Product, Customer Success and leadership to cut churn and sharpen go-to-market strategy. I've lived in 6 cities across 4 countries.</p>
+      <div class="about-grid">
+        <div>
+          <p class="section-label">About</p>
+          <h2>Turning data into revenue decisions</h2>
+        </div>
+        <div>
+          <p>I'm an MBA candidate at Cornell SC Johnson and a Forté Fellow, with a background in industrial engineering and revenue strategy at high-growth companies in Brazil, including Blip, MBRF Global Foods and iFood.</p>
+          <p>Most recently I led a 7-person global RevOps team at Blip, Brazil's largest AI company, where I worked across Product, Customer Success and leadership to cut churn and sharpen go-to-market strategy. I've lived in 6 cities across 4 countries.</p>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>42%</strong><span>churn reduction at Blip, shaping roadmap priorities across 5 launches</span></div>
+        <div class="stat"><strong>12% → 35%</strong><span>conversion among higher-value accounts in one year</span></div>
+        <div class="stat"><strong>$1M</strong><span>in annual savings from the Gainsight relaunch across 4 countries</span></div>
+        <div class="stat"><strong>300%</strong><span>YoY revenue growth for iFood Card</span></div>
+      </div>
     </div>
   </section>
 
   <section id="experience">
     <div class="wrap">
-      <h2>Experience</h2>
+      <p class="section-label">Experience</p>
+      <h2>Where I've worked</h2>
 
       <article class="card">
         <div class="card-head">
-          <h3>Blip</h3>
+          <h3 class="company">Blip</h3>
           <span class="dates">2024 – 2026</span>
         </div>
         <p class="role">Team Lead, Revenue Strategy &amp; Operations</p>
-        <p class="context">São Paulo, Brazil · Brazil's largest AI company, backed by Microsoft, SoftBank and Warburg Pincus</p>
+        <p class="where">Blip · São Paulo, Brazil</p>
+        <p class="context">Brazil's largest AI company, backed by Microsoft, SoftBank and Warburg Pincus</p>
         <ul>
           <li>Led 7-person global RevOps team, improving forecast accuracy by 12% through end-to-end revenue planning and analyses, giving leadership more reliable numbers for decisions and clearer visibility into commercial performance.</li>
           <li>Reduced churn 42% by spearheading cross-functional analysis with Product and Customer Success to identify churn drivers and unmet customer needs, shaping roadmap priorities across 5 product launches and feature releases.</li>
@@ -303,11 +442,12 @@
 
       <article class="card">
         <div class="card-head">
-          <h3>MBRF Global Foods</h3>
+          <h3 class="company">MBRF Global Foods</h3>
           <span class="dates">2022 – 2024</span>
         </div>
         <p class="role">Senior Analyst, Sales Strategy &amp; Planning</p>
-        <p class="context">São Paulo, Brazil · Global protein leader and one of the largest food companies (~$15B EV)</p>
+        <p class="where">MBRF Global Foods · São Paulo, Brazil</p>
+        <p class="context">Global protein leader and one of the largest food companies (~$15B EV)</p>
         <ul>
           <li>Drove 32% annual Frozen Foods revenue growth by using an analytical model to replace a standard product mix with larger bundles matched to each customer and optimizing retail planograms to expand in-store distribution.</li>
           <li>Reduced waiting-related logistics costs by 35% by aligning Commercial and Logistics on 1 scheduling and shipment-tracking process, with real-time ETA visibility and proactive rerouting to keep deliveries within scheduled windows.</li>
@@ -318,11 +458,12 @@
 
       <article class="card">
         <div class="card-head">
-          <h3>iFood</h3>
+          <h3 class="company">iFood</h3>
           <span class="dates">2021 – 2022</span>
         </div>
         <p class="role">Analyst, Sales Strategy &amp; Planning</p>
-        <p class="context">São Paulo, Brazil · Latin America's leading technology ecosystem (~220M monthly orders)</p>
+        <p class="where">iFood · São Paulo, Brazil</p>
+        <p class="context">Latin America's leading technology ecosystem (~220M monthly orders)</p>
         <ul>
           <li>Scaled iFood Card revenue by 300% YoY by shaping the internal venture thesis for the first flexible corporate meal benefits solution and building its operational core and scalable strategic B2B distribution channels from scratch.</li>
           <li>Owned iFood Card's GTM and in-app sales migration, raising gross margin by 25% by eliminating reseller fees.</li>
@@ -334,90 +475,128 @@
 
   <section id="education">
     <div class="wrap">
-      <h2>Education</h2>
-
-      <article class="card">
-        <div class="card-head">
-          <h3>Cornell SC Johnson College of Business</h3>
-          <span class="dates">2028</span>
-        </div>
-        <p class="role">Master of Business Administration</p>
-        <p class="context">Ithaca, NY · Forté Fellow (merit-based scholarship) · High Tech Club, Latin America Business Association, Johnson Tennis Club</p>
-      </article>
-
-      <article class="card">
-        <div class="card-head">
-          <h3>Insper</h3>
-          <span class="dates">2024</span>
-        </div>
-        <p class="role">Master of Business Project Management</p>
-        <p class="context">São Paulo, Brazil · Top 10% of class · Insper Data (Data Science &amp; Analytics student organization)</p>
-      </article>
-
-      <article class="card">
-        <div class="card-head">
-          <h3>Pontifícia Universidade Católica de Minas Gerais</h3>
-          <span class="dates">2021</span>
-        </div>
-        <p class="role">Bachelor of Industrial Engineering</p>
-        <p class="context">Belo Horizonte, Brazil · Top 5% of class · Technology and Innovation Study Group, helping 30+ women entrepreneurs build business models</p>
-      </article>
+      <p class="section-label">Education</p>
+      <h2>Where I've studied</h2>
+      <div class="edu-grid">
+        <article class="card">
+          <div class="card-head">
+            <h3 class="company">Cornell SC Johnson College of Business</h3>
+          </div>
+          <p class="role">Master of Business Administration</p>
+          <p class="where">Ithaca, NY · 2028</p>
+          <ul>
+            <li>Forté Fellow (merit-based scholarship)</li>
+            <li>STEM OPT extension eligible</li>
+            <li>High Tech Club, Latin America Business Association, Johnson Tennis Club</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="card-head">
+            <h3 class="company">Insper</h3>
+          </div>
+          <p class="role">Master of Business Project Management</p>
+          <p class="where">São Paulo, Brazil · 2024</p>
+          <ul>
+            <li>Top 10% of class</li>
+            <li>Insper Data (Data Science &amp; Analytics student organization)</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="card-head">
+            <h3 class="company">PUC Minas</h3>
+          </div>
+          <p class="role">Bachelor of Industrial Engineering</p>
+          <p class="where">Belo Horizonte, Brazil · 2021</p>
+          <ul>
+            <li>Top 5% of class</li>
+            <li>Technology and Innovation Study Group, helping 30+ women entrepreneurs build business models</li>
+          </ul>
+        </article>
+      </div>
     </div>
   </section>
 
   <section id="skills">
     <div class="wrap">
-      <h2>Skills</h2>
-      <ul class="tags">
-        <li>SQL</li>
-        <li>Databricks</li>
-        <li>Tableau</li>
-        <li>Power BI</li>
-        <li>Salesforce</li>
-        <li>HubSpot</li>
-        <li>Gainsight</li>
-        <li>Excel</li>
-        <li>PowerPoint</li>
-        <li>Revenue Operations</li>
-        <li>Go-to-Market Strategy</li>
-        <li>Customer Segmentation</li>
-        <li>Forecasting &amp; Planning</li>
-        <li>Cross-functional Leadership</li>
-      </ul>
+      <p class="section-label">Skills</p>
+      <h2>What I bring</h2>
+      <div class="skill-grid">
+        <div class="card">
+          <h3 class="group-title">Strategy &amp; Operations</h3>
+          <ul class="tags">
+            <li>Revenue Operations</li>
+            <li>Go-to-Market Strategy</li>
+            <li>Customer Segmentation</li>
+            <li>Forecasting &amp; Planning</li>
+            <li>Cross-functional Leadership</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="group-title">Data &amp; Analytics</h3>
+          <ul class="tags">
+            <li>SQL</li>
+            <li>Databricks</li>
+            <li>Tableau</li>
+            <li>Power BI</li>
+            <li>Excel</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="group-title">CRM &amp; Tools</h3>
+          <ul class="tags">
+            <li>Salesforce</li>
+            <li>HubSpot</li>
+            <li>Gainsight</li>
+            <li>PowerPoint</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="outside">
     <div class="wrap">
-      <h2>Outside of Work</h2>
-      <div class="interests">
-        <article class="card">
-          <h3>Cooking</h3>
-          <p>Culinary enthusiast, known among friends for my "Romeo and Juliet" cheesecake.</p>
-        </article>
-        <article class="card">
-          <h3>Sports</h3>
-          <p>Former volleyball captain and varsity swimmer.</p>
-        </article>
-        <article class="card">
-          <h3>Coffee &amp; travel</h3>
-          <p>Coffee aficionado who has lived in 6 cities across 4 countries and is still discovering new favorite flavors.</p>
-        </article>
-        <article class="card">
-          <h3>Community</h3>
-          <p>Volunteer for 7 years, supporting the distribution of 1+ ton of food to local communities.</p>
-        </article>
+      <p class="section-label">Outside of work</p>
+      <h2>Beyond the office</h2>
+      <div class="outside-grid">
+        <div class="card">
+          <h3 class="group-title">Volunteering</h3>
+          <div class="item">
+            <h4>Community food distribution</h4>
+            <p>Volunteer for 7 years, supporting the distribution of 1+ ton of food to local communities.</p>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="group-title">Interests</h3>
+          <div class="item">
+            <h4>Cooking</h4>
+            <p>Culinary enthusiast, known among friends for my "Romeo and Juliet" cheesecake.</p>
+          </div>
+          <div class="item">
+            <h4>Sports</h4>
+            <p>Former volleyball captain and varsity swimmer.</p>
+          </div>
+          <div class="item">
+            <h4>Coffee &amp; travel</h4>
+            <p>Coffee aficionado who has lived in 6 cities across 4 countries and is still discovering new favorite flavors.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="contact">
     <div class="wrap">
-      <h2>Contact</h2>
-      <ul class="contact-list">
-        <li><span>Email</span><a href="mailto:mbb276@cornell.edu">mbb276@cornell.edu</a></li>
-        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/marianna-badaro" target="_blank" rel="noopener">linkedin.com/in/marianna-badaro</a></li>
-      </ul>
+      <div class="contact-card">
+        <p class="section-label">Contact</p>
+        <h2>Let's talk</h2>
+        <p class="lead">I'd love to connect about opportunities in tech and business strategy &amp; operations.</p>
+        <div class="btns">
+          <a class="btn primary" href="mailto:mbb276@cornell.edu">Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/marianna-badaro" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <a class="email" href="mailto:mbb276@cornell.edu">mbb276@cornell.edu</a>
+      </div>
     </div>
   </section>
 </main>
@@ -425,6 +604,25 @@
 <footer>
   <div class="wrap">© 2026 Marianna Barros Badaro</div>
 </footer>
+
+<script>
+  // Highlight the nav link for the section on screen
+  (function () {
+    var links = document.querySelectorAll('.nav-links a[href^="#"]');
+    if (!('IntersectionObserver' in window)) return;
+    var map = {};
+    links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && map[entry.target.id]) {
+          links.forEach(function (a) { a.classList.remove('active'); });
+          map[entry.target.id].classList.add('active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('main section[id]').forEach(function (s) { observer.observe(s); });
+  })();
+</script>
 
 </body>
 </html>
