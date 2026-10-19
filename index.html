@@ -747,12 +747,14 @@
   document.querySelectorAll('main section[id]').forEach(function (s) { navObserver.observe(s); });
 
   // Reveal on scroll + count-up
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function countUp(el) {
     var target = parseInt(el.getAttribute('data-count'), 10);
-    if (reduce || target < 5) return;
-    var start = null, dur = 1100;
+    if (target < 5) return;
+    var run = (el._run || 0) + 1;
+    el._run = run;
+    var start = null, dur = 1200;
     function step(t) {
+      if (el._run !== run) return;
       if (!start) start = t;
       var p = Math.min((t - start) / dur, 1);
       el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
@@ -765,11 +767,23 @@
     entries.forEach(function (e) {
       if (!e.isIntersecting) return;
       e.target.classList.add('in');
-      e.target.querySelectorAll('[data-count]').forEach(countUp);
       revealObserver.unobserve(e.target);
     });
   }, { rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.reveal').forEach(function (el) { revealObserver.observe(el); });
+
+  // Numbers count up every time they scroll back into view
+  var countObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting && !e.target._visible) {
+        e.target._visible = true;
+        countUp(e.target);
+      } else if (!e.isIntersecting) {
+        e.target._visible = false;
+      }
+    });
+  }, { threshold: 0.6 });
+  document.querySelectorAll('[data-count]').forEach(function (el) { countObserver.observe(el); });
 })();
 </script>
 
